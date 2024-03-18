@@ -1,0 +1,39 @@
+type Query {
+    characters(page: Int!, filter: FilterCharacter): Characters
+    locations(page: Int!): Locations
+    episodes(page: Int!): Episodes
+}
+
+type Character {
+    id: ID!
+    name: String
+    image: String
+}
+
+type Location {
+    id: ID!
+    name: String
+    type: String
+}
+
+type Episode {
+    id: ID!
+    name: String
+    episode: String
+}
+
+type Characters {
+    results: [Character]
+}
+
+type Locations {
+    results: [Location]
+}
+
+type Episodes {
+    results: [Episode]
+}
+
+input FilterCharacter {
+    name: String
+}
